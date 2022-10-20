@@ -24,6 +24,13 @@ function CreateArea(props) {
     }
 
     function submitNote(event) {
+
+      // validation added to check not will not be empty
+      if(note.title === "" || note.content === ""){
+        alert("Title and Content cant be empty")
+        return -1 
+      }
+
         props.onAdd(note);
         setNote({
             title:"",
